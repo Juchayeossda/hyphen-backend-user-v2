@@ -1,0 +1,11 @@
+[2023-10-19 08:44:04] 200 POST /api/auth/signin HTTP/1.1 294186ms requested.
+[2023-10-19 08:44:34] 200 POST /api/auth/signin HTTP/1.1 319682ms requested.
+[2023-10-19 08:44:50] 200 POST /api/auth/signin HTTP/1.1 174486ms requested.
+[2023-10-19 08:44:56] 200 POST /api/auth/signin HTTP/1.1 115768ms requested.
+[2023-10-19 08:45:47] 403 PATCH /api/user/name HTTP/1.1 100359ms requested.
+[2023-10-19 08:45:53] 401 PATCH /api/user/name HTTP/1.1 21098ms requested.
+[2023-10-19 08:45:58] 403 PATCH /api/user/name HTTP/1.1 24189ms requested.
+[2023-10-19 08:47:13] 403 PATCH /api/user/name HTTP/1.1 248322ms requested.
+[2023-10-19 08:47:39] 200 GET /api/user/info HTTP/1.1 23192ms requested.
+[2023-10-19 08:48:04] 403 PATCH /api/user/name HTTP/1.1 12346ms requested.
+[2023-10-19 09:05:32] 403 PATCH /api/user/name HTTP/1.1 270034ms requested.

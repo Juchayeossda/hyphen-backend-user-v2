@@ -1,0 +1,71 @@
+server:
+  tomcat:
+    basedir: .
+    accesslog:
+      prefix: request-log-
+      enabled: true
+      suffix: .txt
+      directory: logs
+      file-date-format: yyyy-MM-dd
+      pattern: '[%{yyyy-MM-dd HH:mm:ss}t] %s %r %Dms requested.' # 날짜 및 시간, HTTP 응답 상태 코드, HTTP 요청 정보(메서드, URI, 등), 요청 처리 시간
+
+front: http://front-server.com
+
+spring:
+  profiles:
+    include: oauth
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hyphen_user
+    username: root
+    hikari:
+      password: rnwkgus
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+      data-locations: classpath:sql/data.sql
+  jpa:
+    open-in-view: false
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: ture
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+application:
+  security:
+    jwt:
+      accessKey: 0d371d7976c85ce782a59b2fede1752f0add437831c712730d61f320789ef118800b251b9ebb918655da8472abb6ca09b9f15c9131023fdd8abf609b2e6accdc
+      refreshKey: 112f090b6df935c44569ea9c8cbe806ecbf99ab7ae106fd368f2396f2ccb4a4034f14064789c990f6ee8b25b72d818d6bd7cc75ca7bf24dc021ca6269f5cbb4adf1ac03ab034f701ef391b421778b4baf3ef762e1834883c6d880214d98e9a71f536039205e4a79ade71d5e075136256b71660a0be73548ffb26bee185fba37b
+      expiration: 7 # 1 week
+      refreshExpiration: 28 # 4 week
+
+mail:
+  smtp:
+    auth: true
+    starttls:
+      required: true
+      enable: true
+    socketFactory:
+      fallback: false
+      port: 465
+    port: 465
+
+AdminMail:
+  name: Hyphen
+  id: g88080997@gmail.com
+  password: mvkiamndnqiwedih
+
+webClient:
+  servers:
+    imageServer:
+      path: http://101.101.217.155:8083
