@@ -1,0 +1,7 @@
+[2023-10-24 08:18:14] 200 POST /api/auth/signin HTTP/1.1 249063ms requested.
+[2023-10-24 15:37:52] 200 GET / HTTP/1.1 118923ms requested.
+[2023-10-24 15:37:53] 500 GET /api/auth/google HTTP/1.1 50232ms requested.
+[2023-10-24 15:37:58] 500 GET /api/auth/google HTTP/1.1 5131ms requested.
+[2023-10-24 15:37:58] 401 GET /favicon.ico HTTP/1.1 27698ms requested.
+[2023-10-24 15:55:33] 200 POST /api/auth/signin HTTP/1.1 260153ms requested.
+[2023-10-24 15:55:53] 200 GET /api/user/info HTTP/1.1 56793ms requested.

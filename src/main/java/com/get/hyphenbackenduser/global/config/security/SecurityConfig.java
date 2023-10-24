@@ -36,9 +36,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .exceptionHandling(handlingConfigures -> handlingConfigures.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .authorizeHttpRequests(authorize -> authorize
-//                                .requestMatchers(HttpMethod.POST, "/v2/api/auth/unregister").authenticated()
-//                                .requestMatchers("/", "/v2", "/v2/api/auth/**", "/v2/api/token/**", "/v2/api/mail/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/auth/unregister").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/api/auth/unregister", "/api/token/validate").authenticated()
                         .requestMatchers("/", "/api/auth/**", "/api/token/**", "/api/mail/**").permitAll()
                                 .anyRequest()
                                 .authenticated()

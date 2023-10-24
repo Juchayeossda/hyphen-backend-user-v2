@@ -93,4 +93,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 errorMessageFormat(SERVER_ERROR_INTERNAL_SERVER_ERROR, e.getMessage())
         ), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Response> handleGenericException(Exception e) {
+        return new ResponseEntity<>(new Response(
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                errorMessageFormat(SERVER_ERROR_INTERNAL_SERVER_ERROR, e.getMessage())
+        ), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
